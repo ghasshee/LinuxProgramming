@@ -35,9 +35,23 @@ main (int argc, char *argv[])
             gm.tm_wday, gm.tm_yday, gm.tm_isdst);
 
 
+    locp = localtime(&t);
+    if (locp == NULL)
+        errExit("localtime");
 
+    loc = *locp;        /* Save local copy */ 
 
+    printf("Broken down by localtime():\n");
+    printf("    year=%d mon=%d mday=%d hour=%d min=%d sec=%d ",
+            loc.tm_year, loc.tm_mon, loc.tm_mday, loc.tm_hour, loc.tm_min, loc.tm_sec);
 
+    printf("asctime() foramats the gmtime() value as: %s", asctime(&gm));
+    printf("ctime() formats the time() value as:      %s", ctime(&t));
+
+    printf("mktime() of gmtime() value:     %ld secs\n", (long) mktime(&gm));
+    printf("mktime() of localtime() value:  %ld secs\n", (long) mktime(&loc));
+    
+    exit(EXIT_SUCCESS);
 
 
     

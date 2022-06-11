@@ -1,8 +1,8 @@
 #include <sys/stat.h> 
 #include <fcntl.h> 
-#include "lib/tlpi_hdr.h"
-#include "lib/error_functions.h"
-#include "lib/error_functions.c"
+#include "tlpi_hdr.h"
+#include "error_functions.h"
+#include "error_functions.c"
 
 #ifndef BUF_SIZE
 #define BUF_SIZE 1024
