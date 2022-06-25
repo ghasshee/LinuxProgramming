@@ -29,6 +29,9 @@ main(int argc, char *argv[])
 
 
     if (argc > 1) {
+        if (lseek(fd, 0, SEEK_SET) == -1)
+            errExit("lseek");
+
         if (write(fd, argv[1], strlen(argv[1])) != strlen(argv[1]))
             fatal("write() failed");
 

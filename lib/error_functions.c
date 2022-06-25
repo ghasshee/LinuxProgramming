@@ -42,7 +42,7 @@ outputError(Boolean useErr, int err, Boolean flushStdout,
     else
         snprintf(errText, BUF_SIZE, ":"); 
 
-    snprintf(buf, BUF_SIZE, "EROR%s %s\n", errText, userMsg);
+    snprintf(buf, BUF_SIZE, "ERROR%s %s\n", errText, userMsg);
 
     if (flushStdout) 
         fflush(stdout); 
