@@ -3,9 +3,8 @@ LIB = -I ../ -I ../lib
 CC = cc ${LIB} 
 
 cp : 
-	${CC} direct_read.c -o direct_read
-	${CC} write_bytes.c -o write_bytes
+	${CC} t_mount.c -o t_mount
 
 
 clean : 
-	rm a.out ./direct_read ./write_bytes
+	rm a.out ./t_mount
